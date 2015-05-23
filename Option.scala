@@ -2,7 +2,7 @@ sealed trait Option[+A]
 case class Some[+A](get: A) extends Option[A]
 case object None extends Option[Nothing]
 
-trait Options[+A] {
+object Option {
   def map2[A, B, C](a: Option[A], b: Option[B])(f: (A, B) => C): Option[C] = {
     a match {
       case None => None
